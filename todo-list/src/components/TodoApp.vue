@@ -1,11 +1,14 @@
 <script setup>
 import { ref } from 'vue'
 
-const newTask = ref('')
-const tasks = ref([])
+const newTask = ref({ task: '', time: '' })
+const formattedTime = new Date().toISOString();
+
+const tasks = ref([{ task: 'Learn Vue 3', time: formattedTime }])
+
 const addTask = () => {
   if(newTask.value.trim() !== '') {
-    tasks.value.push(newTask.value)
+    tasks.value.push({ task: newTask.value, time: formattedTime })
   }
   newTask.value = ''
 }
@@ -28,7 +31,7 @@ const removeTask = (index) => {
 
     <ul class="task-list">
       <li v-for="(task, index) in tasks" :key="index" class="task-item">
-        {{ task }}
+        {{ task.task +',  entered '+ task.time }}
         <button @click="removeTask(index)" class="remove-button">Remove</button>
       </li>
     </ul>
