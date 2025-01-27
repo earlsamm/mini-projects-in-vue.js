@@ -2,7 +2,8 @@
 import { ref } from 'vue'
 
 const newTask = ref({ task: '', time: '' })
-const formattedTime = new Date().toISOString();
+const fTime = new Date().toISOString();
+const formattedTime = ref(fTime);
 
 const tasks = ref([{ task: 'Learn Vue 3', time: formattedTime }])
 
