@@ -1,16 +1,15 @@
 <script setup>
-import TodoApp from './components/TodoApp.vue'
-import RandomQuoteGenerator from './components/RandomQuoteGenerator.vue'
+import NavBar from './components/NavBar.vue'
+import HomeComponent from './components/HomeComponent.vue'
+import FooterComponent from './components/FooterComponent.vue'
 </script>
 
 <template>
-
-
   <main>
-    <RandomQuoteGenerator />
-    <TodoApp />
+    <NavBar />
+    <HomeComponent />
+    <FooterComponent />
   </main>
 </template>
 
-<style scoped>
-</style>
+<style scoped></style>
